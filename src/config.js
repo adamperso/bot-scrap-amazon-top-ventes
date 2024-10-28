@@ -1,14 +1,16 @@
+const AMAZON_CATEGORIES_URL = 'https://www.amazon.fr/gp/bestsellers/?ref_=nav_cs_bestsellers';
+const AMAZON_PRODUCTS_URL = 'https://www.amazon.fr/gp/bestsellers/kitchen/ref=zg_bs_nav_kitchen_0';
 
 const selectors = {
-  ranking: '#p13n-asin-index-0 > div > div.a-section.zg-bdg-ctr > div.a-section.zg-bdg-body.zg-bdg-clr-body.aok-float-left > span',
-  nomProduit: '#B0BXY7SVVT > div > div > a > span > div',
-  ratings: '#B0BXY7SVVT > div > div > div:nth-child(2) > div > a > span',
-  prix: '#B0BXY7SVVT > div > div > div:nth-child(3) > div > div > a > div > span > span'
+  ranking: 'div.zg-bdg-body span.zg-bdg-text',
+  nomProduit: 'div._cDEzb_p13n-sc-css-line-clamp-3_g3dy1',
+  ratings: 'div.a-icon-row span.a-size-small',
+  prix: 'span._cDEzb_p13n-sc-price_3mJ9Z',
+  categories: 'div[role="treeitem"]._p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf._p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL'
 };
-
-const AMAZON_URL = 'https://www.amazon.fr/gp/bestsellers/kitchen/';
 
 module.exports = {
   selectors,
-  AMAZON_URL
+  AMAZON_CATEGORIES_URL,
+  AMAZON_PRODUCTS_URL
 };
