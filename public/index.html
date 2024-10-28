@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Résultats du Scraping</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .ranking {
+            font-weight: bold;
+            color: #e47911;
+        }
+    </style>
+</head>
+<body>
+    <h1>Résultats du Scraping Amazon</h1>
+    <div id="results"></div>
+
+    <script>
+        fetch('/api/results')
+            .then(response => response.json())
+            .then(data => {
+                const resultsDiv = document.getElementById('results');
+                const products = [];
+
+                // Créer un tableau d'objets produits
+                for(let i = 0; i < data.ranking.length; i++) {
+                    products.push({
+                        ranking: data.ranking[i],
+                        nomProduit: data.nomProduit[i],
+                        ratings: data.ratings[i],
+                        prix: data.prix[i]
+                    });
+                }
+
+                // Afficher chaque produit
+                products.forEach(product => {
+                    const productDiv = document.createElement('div');
+                    productDiv.className = 'product';
+                    productDiv.innerHTML = `
+                        <div class="ranking">Rang: ${product.ranking}</div>
+                        <div>Nom: ${product.nomProduit}</div>
+                        <div>Évaluation: ${product.ratings}</div>
+                        <div>Prix: ${product.prix}</div>
+                    `;
+                    resultsDiv.appendChild(productDiv);
+                });
+            })
+            .catch(error => console.error('Erreur:', error));
+    </script>
+</body>
+</html>
