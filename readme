@@ -1,0 +1,81 @@
+Amazon Scraper avec Dashboard Vue.js
+Description
+Projet de scraping avancé qui extrait les données des meilleures ventes Amazon et les présente dans un tableau de bord interactif développé avec Vue.js.
+
+Caractéristiques
+Extraction automatisée des données Amazon
+Interface utilisateur moderne et responsive
+Système anti-détection avancé
+Sauvegarde JSON des résultats
+API REST intégrée
+Tri dynamique des données
+Stack Technique
+Node.js & Express.js
+Vue.js
+Puppeteer
+MongoDB
+
+
+Installation
+Cloner le dépôt
+
+Installer les dépendances :
+npm install
+
+Configurer les variables d'environnement
+
+
+Lancer l'application :
+npm start
+
+
+Structure du Projet
+src/
+scraper.js - Logique de scraping
+server.js - Serveur Express
+public/
+index.html - Interface Vue.js
+results.json - Données extraites
+
+
+Fonctionnalités Détaillées
+Scraping
+Extraction des classements
+Noms des produits
+Évaluations et notes
+Prix actuels
+Catégories
+
+
+Anti-Détection
+Rotation des User-Agents
+Délais aléatoires
+Headers personnalisés
+Viewport dynamique
+
+
+Interface
+Tri par rang
+Tri par évaluations
+Mise à jour en temps réel
+Design responsive
+
+
+API
+GET /api/results - Obtenir les données scrapées
+GET /api/categories - Liste des catégories
+Sécurité
+Protection anti-détection
+Gestion des erreurs
+Délais intelligents
+Headers sécurisés
+
+
+Auteur
+adam boulakhrif
+
+Licence
+MIT
+
+Note Légale
+Projet éducatif. Respecter les conditions d'utilisation d'Amazon.
