@@ -13,7 +13,7 @@
     "express": "^4.21.1",
     "fs": "^0.0.1-security",
     "git": "^0.1.5",
-    "puppeteer": "^23.6.0",
+    "puppeteer": "^23.6.1",
     "qoa": "^0.2.0"
   }
 }
